@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fff7f2" />
+    <title>우리 결혼할래?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="proposal" id="proposal">
+      <div class="heart heart-one">♥</div>
+      <div class="heart heart-two">♥</div>
+      <div class="heart heart-three">♥</div>
+
+      <section class="question-card" id="question-card" aria-labelledby="proposal-title">
+        <p class="eyebrow">TO. MY FAVORITE PERSON</p>
+        <p class="ring" aria-hidden="true">♡</p>
+        <h1 id="proposal-title">나랑<br /><em>결혼해줄래?</em></h1>
+        <p class="message">매일의 평범한 순간도<br />너와 함께라면 특별해질 것 같아.</p>
+
+        <div class="button-area" id="button-area">
+          <button class="answer yes" id="yes-button" type="button">좋아 ♡</button>
+          <button class="answer no" id="no-button" type="button">싫어</button>
+        </div>
+        <p class="hint">‘싫어’가 잘 안 눌릴 수도 있어요 :)</p>
+      </section>
+
+      <section class="celebration" id="celebration" aria-live="polite" hidden>
+        <div class="celebration-heart">♥</div>
+        <p class="eyebrow">THE BEST ANSWER</p>
+        <h1>우리,<br /><em>행복하게 살자!</em></h1>
+        <p>말해줘서 고마워.<br />평생 네 편이 되어줄게 ♡</p>
+        <div class="sparkles" aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i></div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
