@@ -14,6 +14,9 @@ const weddingDateInput=document.querySelector('#wedding-date');
 const dateStatus=document.querySelector('#date-status');
 const saveDateButton=document.querySelector('#save-date');
 const closeDialogButton=document.querySelector('#close-dialog');
+const venueDialog=document.querySelector('#venue-dialog');
+const closeVenueDialogButton=document.querySelector('#close-venue-dialog');
+const venueLink=document.querySelector('#venue-link');
 let isEscaped=false;
 let couple={groom:'',bride:''};
 const isMobile=()=>window.matchMedia('(hover: none), (pointer: coarse)').matches;
@@ -24,8 +27,11 @@ function moveNoButton(){ const buttonRect=noButton.getBoundingClientRect(); cons
 noButton.addEventListener('pointerenter',()=>{ if(!isMobile())moveNoButton(); });
 noButton.addEventListener('click',(event)=>{ if(isMobile()){ event.preventDefault(); moveNoButton(); } });
 function openDateDialog(){ dateStatus.textContent=''; dateStatus.className='date-status'; dateDialog.showModal(); weddingDateInput.focus(); }
-function showCelebration(){ questionCard.hidden=true; if(isEscaped)noButton.remove(); showCard(celebration); }
+function showCelebration(){ questionCard.hidden=true; if(isEscaped)noButton.remove(); showCard(celebration); venueDialog.showModal(); }
 yesButton.addEventListener('click',openDateDialog);
 closeDialogButton.addEventListener('click',()=>dateDialog.close());
 dateDialog.addEventListener('click',(event)=>{ if(event.target===dateDialog)dateDialog.close(); });
+closeVenueDialogButton.addEventListener('click',()=>venueDialog.close());
+venueDialog.addEventListener('click',(event)=>{ if(event.target===venueDialog)venueDialog.close(); });
+venueLink.addEventListener('click',()=>{ if(typeof window.gtag==='function'){ window.gtag('event','wedding_venue_recommendation_click',{event_category:'engagement',event_label:'SKK Convention',transport_type:'beacon'}); } });
 dateForm.addEventListener('submit',async(event)=>{ event.preventDefault(); const weddingDate=weddingDateInput.value; saveDateButton.disabled=true; saveDateButton.textContent='기록하는 중…'; try { const response=await fetch('/api/proposal',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({groomName:couple.groom,brideName:couple.bride,weddingDate})}); const result=await response.json(); if(!response.ok) throw new Error(result.message||'알 수 없는 오류가 발생했습니다.'); dateStatus.textContent='소중한 기록을 저장했어요.'; dateStatus.classList.add('success'); setTimeout(()=>{ dateDialog.close(); showCelebration(); },500); } catch(error) { dateStatus.textContent=`저장하지 못했어요: ${error.message}`; saveDateButton.disabled=false; saveDateButton.innerHTML='기록하고 계속하기 <b>→</b>'; } });
