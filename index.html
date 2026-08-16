@@ -3,38 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#fff7f2" />
+    <meta name="theme-color" content="#f5f5f7" />
     <title>우리 결혼할래?</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Myeongjo:wght@700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main class="proposal" id="proposal">
-      <div class="heart heart-one">♥</div>
-      <div class="heart heart-two">♥</div>
-      <div class="heart heart-three">♥</div>
-
-      <section class="question-card" id="question-card" aria-labelledby="proposal-title">
-        <p class="eyebrow">TO. MY FAVORITE PERSON</p>
-        <p class="ring" aria-hidden="true">♡</p>
-        <h1 id="proposal-title">나랑<br /><em>결혼해줄래?</em></h1>
-        <p class="message">매일의 평범한 순간도<br />너와 함께라면 특별해질 것 같아.</p>
-
+      <div class="orb orb-pink"></div>
+      <div class="orb orb-blue"></div>
+      <section class="setup card" id="setup" aria-labelledby="setup-title">
+        <div class="icon-bubble" aria-hidden="true">♡</div>
+        <p class="overline">A SMALL QUESTION</p>
+        <h1 id="setup-title">우리의 이름을<br />먼저 알려줘.</h1>
+        <p class="intro">두 사람의 이름으로 특별한 순간을 준비할게요.</p>
+        <form id="name-form">
+          <label><span>신랑 이름</span><input id="groom-name" name="groom" type="text" maxlength="12" placeholder="준서" autocomplete="name" required /></label>
+          <label><span>신부 이름</span><input id="bride-name" name="bride" type="text" maxlength="12" placeholder="지은" autocomplete="name" required /></label>
+          <button class="primary-button" type="submit">시작하기 <b>→</b></button>
+        </form>
+      </section>
+      <section class="question card" id="question-card" aria-labelledby="proposal-title" hidden>
+        <div class="icon-bubble" aria-hidden="true">♥</div>
+        <p class="overline">ONE IMPORTANT QUESTION</p>
+        <h1 id="proposal-title"><span id="bride-title">너</span>야,<br /><em>나랑 결혼해줄래?</em></h1>
+        <p class="message"><span id="groom-message">나</span>는 매일의 평범한 순간도<br />너와 함께라면 특별해질 것 같아.</p>
         <div class="button-area" id="button-area">
-          <button class="answer yes" id="yes-button" type="button">좋아 ♡</button>
+          <button class="answer yes" id="yes-button" type="button">좋아 <span>♡</span></button>
           <button class="answer no" id="no-button" type="button">싫어</button>
         </div>
-        <p class="hint">‘싫어’가 잘 안 눌릴 수도 있어요 :)</p>
+        <p class="hint">‘싫어’는 조금 수줍음이 많아요.</p>
       </section>
-
-      <section class="celebration" id="celebration" aria-live="polite" hidden>
-        <div class="celebration-heart">♥</div>
-        <p class="eyebrow">THE BEST ANSWER</p>
-        <h1>우리,<br /><em>행복하게 살자!</em></h1>
-        <p>말해줘서 고마워.<br />평생 네 편이 되어줄게 ♡</p>
-        <div class="sparkles" aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i></div>
+      <section class="celebration card" id="celebration" aria-live="polite" hidden>
+        <div class="icon-bubble celebration-icon" aria-hidden="true">♥</div>
+        <p class="overline">THE BEST ANSWER</p>
+        <h1><span id="bride-celebration">우리</span>와 <span id="groom-celebration">우리</span>,<br /><em>행복하게 살자.</em></h1>
+        <p class="message">말해줘서 고마워.<br />평생 네 편이 되어줄게.</p>
+        <div class="signature">WITH ALL MY LOVE ♡</div>
       </section>
     </main>
     <script src="script.js"></script>
