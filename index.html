@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f5f5f7" />
-    <title>우리 결혼할래?</title>
+    <title>프로포즈 게임 | 나랑 결혼해줄래?</title>
+    <meta name="description" content="사랑하는 사람에게 이름과 결혼식 날짜로 특별한 질문을 건네는 감성 프로포즈 게임입니다." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="프로포즈 게임 | 나랑 결혼해줄래?" />
+    <meta property="og:description" content="이름과 결혼식 날짜로 완성하는 특별한 프로포즈 게임" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQ86Z9LMMP"></script>
     <script>
@@ -12,6 +18,17 @@
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', 'G-ZQ86Z9LMMP');
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "프로포즈 게임",
+        "description": "사랑하는 사람에게 결혼을 제안할 수 있는 온라인 프로포즈 게임입니다.",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "ko-KR"
+      }
     </script>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -21,9 +38,9 @@
       <div class="orb orb-blue"></div>
       <section class="setup card" id="setup" aria-labelledby="setup-title">
         <div class="icon-bubble" aria-hidden="true">♡</div>
-        <p class="overline">A SMALL QUESTION</p>
+        <p class="overline">A SMALL QUESTION · PROPOSAL GAME</p>
         <h1 id="setup-title">우리의 이름을<br />먼저 알려줘.</h1>
-        <p class="intro">두 사람의 이름으로 특별한 순간을 준비할게요.</p>
+        <p class="intro">두 사람의 이름으로 특별한 순간을 준비할게요.<br />사랑을 전하는 작은 프로포즈 게임이에요.</p>
         <form id="name-form">
           <label><span>신랑 이름</span><input id="groom-name" name="groom" type="text" maxlength="12" placeholder="준서" autocomplete="name" required /></label>
           <label><span>신부 이름</span><input id="bride-name" name="bride" type="text" maxlength="12" placeholder="지은" autocomplete="name" required /></label>
