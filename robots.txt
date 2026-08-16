@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://ex-260816.vercel.app/sitemap.xml
